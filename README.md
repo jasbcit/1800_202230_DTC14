@@ -11,6 +11,8 @@ This browser based web application to ...
 * Hello my name is Jas. I'm excited about this project because it is exciting
 
 * Hi my name Ian and I am excited about fun projects with friends
+
+* Hello my name is Cadan. I can't wait to start this project because out team is so great!
  
 ## Technologies
 
@@ -20,7 +22,7 @@ Technologies used for this project:
 * JavaScript
 * Bootstrap
 * ...
- 
+
 ## Content
 
 Content of the project folder:
