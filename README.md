@@ -5,20 +5,24 @@
 * [Contents](#content)
 
 ## General Info
+
 This browser based web application to ...
+
 * Hello my name is Jas. I'm excited about this project because it is exciting
 * Hello my name is Cadan. I can't wait to start this project because out team is so great!
-* TEST 
-* Adding this line to see an example of a conflict
-	
+* Hello my name is Ian. I am excited to work on a project with friends!
+ 
 ## Technologies
+
 Technologies used for this project:
+
 * HTML, CSS
 * JavaScript
-* Bootstrap 
+* Bootstrap
 * ...
-	
+ 
 ## Content
+
 Content of the project folder:
 
 ```
@@ -43,6 +47,6 @@ Firebase hosting files:
 ```
 
 Tips for file naming files and folders:
+
 * use lowercase with no spaces
 * use dashes (not underscore) for word separation
-
