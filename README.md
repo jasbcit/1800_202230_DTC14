@@ -6,6 +6,7 @@
 
 ## General Info
 This browser based web application to ...
+* Hello my name is Jas. I'm excited about this project because it is exciting
 	
 ## Technologies
 Technologies used for this project:
