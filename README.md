@@ -9,6 +9,7 @@ This browser based web application to ...
 * Hello my name is Jas. I'm excited about this project because it is exciting
 * Hello my name is Cadan. I can't wait to start this project because out team is so great!
 * TEST 
+* Adding this line to see an example of a conflict
 	
 ## Technologies
 Technologies used for this project:
