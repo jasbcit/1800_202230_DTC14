@@ -1,3 +1,8 @@
+body {
+    background-color: #ebebeb;
+
+}
+
 .wrapper {
     display: flex;
     flex-direction: column;
@@ -26,12 +31,17 @@ input {
 }
 
 #analyze-button {
+    color: white;
+    background-color: goldenrod;
+    border: 0px;
     border-radius: 15px;
     padding: 15px;
 }
+
 .nav {
     width: 100%
 }
+
 .nav-pills .nav-link.active {
     background-color: black !important;
 }
@@ -43,4 +53,18 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px 15px;
+
+
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
 }
