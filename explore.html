@@ -5,167 +5,175 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <!-- Bootstrap Library CSS CDN go here -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <!-- Boostrap Library JS CDN  go here -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Other libraries go here -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <style>
-      @import url("https://fonts.googleapis.com/css?family=Arbutus+Slab|Open+Sans&display=swap");
-      body {
-        background: #f9f9f9;
-        color: #495456;
-        margin: 72px;
-        font-family: Open Sans, sans-serif;
-      }
-
       header {
-        padding-bottom: 50px;
-        text-align: center;
+        height: 150px;
+        padding: 50px;
       }
-
-      h2 {
-        font-family: Arbutus Slab, serif;
-        font-weight: normal;
-        color: #000;
-        line-height: 1.25;
-      }
-
-      p {
-        position: absolute;
-        bottom: 0;
-        font-size: 14px;
-      }
-
-      .container {
-        max-width: 900px;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-        grid-gap: 48px;
-        margin: 0 auto;
-      }
-
       .card {
-        cursor: pointer;
-        position: relative;
-        height: 0;
-        padding-bottom: 120%;
-        --offset-multiplier: 4px;
-        transition: transform 0.6s ease;
-        --translate: 0;
-        transform: translate(var(--translate), var(--translate));
-      }
-      .card:hover {
-        --offset-multiplier: 6px;
-      }
-      .card:hover {
-        --translate: calc(-1px * (var(--cards) - 1));
-        transition: transform 0.3s ease;
+        height: 500px;
       }
 
-      .child {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        padding: 0 16px;
-        box-sizing: border-box;
-        background: #fff;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1),
-          0px -4px 8px rgba(255, 255, 255, 0.8);
-        border-radius: 6px;
-        transition: inherit;
-        --translate: calc(var(--offset) * var(--offset-multiplier));
-        transform: translate(var(--translate), var(--translate));
-        z-index: 5;
-      }
-      .child:nth-child(1) {
-        --offset: 0;
-        z-index: 4;
-      }
-      .child:nth-child(2) {
-        --offset: 1;
-        z-index: 3;
-      }
-      .child:nth-child(3) {
-        --offset: 2;
-        z-index: 2;
-      }
-      .child:nth-child(4) {
-        --offset: 3;
-        z-index: 1;
-      }
-      .child:nth-child(5) {
-        --offset: 4;
-        z-index: 0;
+      img {
+        max-width: 100%;
+        height: 250px;
       }
     </style>
   </head>
   <body>
     <header><h1>Explore</h1></header>
-    <div class="container">
-      <div class="card" style="--cards: 5">
-        <div class="child">
-          <h2>Make Time to Write</h2>
-          <p>5 articles</p>
+    <section id="gallery">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4">
+            <div class="card">
+              <img
+                src="images/explore-images/aaron-burden-y02jEX_B0O0-unsplash.jpg"
+                alt="Card image cap"
+              />
+
+              <div class="card-body">
+                <h5 class="card-title">
+                  Make Time to Write: Overcome Your Excuses
+                </h5>
+                <p class="card-text">
+                  By Cynthia ... a full day of work, family and life, you fall
+                  into bed ... Mentally ticking off your to-do list, you cycle
+                  through shopping lists, phone calls, and ... feeling
+                </p>
+                <a href="" class="btn btn-outline-success btn-sm">Read More</a>
+                <a href="" class="btn btn-outline-danger btn-sm"
+                  ><i class="fa fa-heart-o"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-4">
+            <div class="card">
+              <img
+                src="images/explore-images/angelina-litvin-K3uOmmlQmOo-unsplash.jpg"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h5 class="card-title">
+                  Three Proven Ways to Handle Your Writing Anxiety
+                </h5>
+                <p class="card-text">
+                  Discover how to get rid of the writing anxiety once and for
+                  all!
+                </p>
+                <a href="" class="btn btn-outline-success btn-sm">Read More</a>
+                <a href="" class="btn btn-outline-danger btn-sm"
+                  ><i class="fa fa-heart-o"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-4">
+            <div class="card">
+              <img
+                src="images/explore-images/janko-ferlic-sfL_QOnmy00-unsplash.jpg"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h5 class="card-title">The Myth of the Writing Fairy</h5>
+                <p class="card-text">
+                  Here’s a fun question to ponder. What do The Stand, The Hobbit
+                  and A ... Carol all have in common?
+                </p>
+                <a href="" class="btn btn-outline-success btn-sm">Read More</a>
+                <a href="" class="btn btn-outline-danger btn-sm"
+                  ><i class="fa fa-heart-o"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mb-4">
+            <div class="card">
+              <img
+                src="images/explore-images/jaredd-craig-HH4WBGNyltc-unsplash.jpg"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h5 class="card-title">The Benefits of Journal Writing</h5>
+                <p class="card-text">
+                  Everyday we experience many different events. Some good, some
+                  bad, some memorable and some that can be forgotten the next
+                  day.
+                </p>
+                <a href="" class="btn btn-outline-success btn-sm">Read More</a>
+                <a href="" class="btn btn-outline-danger btn-sm"
+                  ><i class="fa fa-heart-o"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mb-4">
+            <div class="card">
+              <img
+                src="images/explore-images/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h5 class="card-title">
+                  Basic Steps To Plan Academic Dissertation Writing
+                </h5>
+                <p class="card-text">
+                  Let us talk a bit about what SEO is before we get into the SEO
+                  article writing guidelines for those that may be new or do not
+                  quite understand it.
+                </p>
+                <a href="" class="btn btn-outline-success btn-sm">Read More</a>
+                <a href="" class="btn btn-outline-danger btn-sm"
+                  ><i class="fa fa-heart-o"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-4">
+            <div class="card">
+              <img
+                src="images/explore-images/kelly-sikkema-tk9RQCq5eQo-unsplash.jpg"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Writer’s Web Resources</h5>
+                <p class="card-text">
+                  The Internet has truly ... the careers of writers ... Now you
+                  can work for ... ... and a whole range of other clients on a
+                  truly global scale. Whether you are in the
+                </p>
+                <a href="" class="btn btn-outline-success btn-sm">Read More</a>
+                <a href="" class="btn btn-outline-danger btn-sm"
+                  ><i class="fa fa-heart-o"></i
+                ></a>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="child"></div>
-        <div class="child"></div>
-        <div class="child"></div>
-        <div class="child"></div>
       </div>
-      <div class="card" style="--cards: 3">
-        <div class="child">
-          <h2>Handle Your Writing Anxiety</h2>
-          <p>3 articles</p>
-        </div>
-        <div class="child"></div>
-        <div class="child"></div>
-      </div>
-      <div class="card" style="--cards: 2">
-        <div class="child">
-          <h2>Writing Myths</h2>
-          <p>2 articles</p>
-        </div>
-        <div class="child"></div>
-      </div>
-      <div class="card" style="--cards: 4">
-        <div class="child">
-          <h2>The Benefits of Journal Writing</h2>
-          <p>4 articles</p>
-        </div>
-        <div class="child"></div>
-        <div class="child"></div>
-        <div class="child"></div>
-      </div>
-      <div class="card" style="--cards: 4">
-        <div class="child">
-          <h2>How To Plan Academic Writing</h2>
-          <p>4 articles</p>
-        </div>
-        <div class="child"></div>
-        <div class="child"></div>
-        <div class="child"></div>
-      </div>
-      <div class="card" style="--cards: 3">
-        <div class="child">
-          <h2>Writer’s Web Resources</h2>
-          <p>3 articles</p>
-        </div>
-        <div class="child"></div>
-        <div class="child"></div>
-      </div>
-      <div class="card" style="--cards: 5">
-        <div class="child">
-          <h2>Grammar - A Short Run-Through</h2>
-          <p>5 articles</p>
-        </div>
-        <div class="child"></div>
-        <div class="child"></div>
-        <div class="child"></div>
-      </div>
-      <div class="card" style="--cards: 3">
-        <div class="child">
-          <h2>Writing: Master the Art of Persuasion</h2>
-          <p>3 articles</p>
-        </div>
-        <div class="child"></div>
-        <div class="child"></div>
-      </div>
-    </div>
+    </section>
   </body>
 </html>
