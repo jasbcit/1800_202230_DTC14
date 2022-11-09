@@ -64,13 +64,14 @@ function displayCards(collection) {
         var details = doc.data().details; // get value of the "details" key
         var articleID = doc.data().code; //get unique ID to each hike to be used for fetching right image
         let newcard = cardTemplate.content.cloneNode(true);
-
+        let link = doc.data().link
         //update title and text and image
         newcard.querySelector(".card-title").innerHTML = title;
         newcard.querySelector(".card-text").innerHTML = details;
         newcard.querySelector(
           ".card-image"
         ).src = `./images/explore-images/${articleID}.jpg`; //Example: NV01.jpg
+        newcard.querySelector(".read-more-link").innerHTML = link
 
         //give unique ids to all elements for future use
         // newcard.querySelector('.card-title').setAttribute("id", "ctitle" + i);
