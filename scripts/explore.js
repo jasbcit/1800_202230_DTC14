@@ -86,4 +86,3 @@ function displayCards(collection) {
 }
 
 displayCards("articles");
-
