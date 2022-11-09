@@ -1,5 +1,6 @@
 // Initialize the FirebaseUI Widget using Firebase.
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
+const date = new Date()
 
 var uiConfig = {
   callbacks: {
@@ -26,6 +27,7 @@ var uiConfig = {
             email: user.email, //with authenticated user's ID (user.uid)
             country: "Canada", //optional default profile info
             school: "BCIT", //optional default profile info
+            datejoined: date.toLocaleDateString()
           })
           .then(function () {
             console.log("New user added to firestore");
@@ -47,7 +49,7 @@ var uiConfig = {
   },
   // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
   signInFlow: "popup",
-  signInSuccessUrl: "index.html",
+  signInSuccessUrl: "home.html",
   signInOptions: [
     // Leave the lines as is for the providers you want to offer your users.
     // firebase.auth.GoogleAuthProvider.PROVIDER_ID,
