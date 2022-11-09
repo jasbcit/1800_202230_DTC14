@@ -52,7 +52,7 @@ function writeArticles() {
 }
 
 function displayCards(collection) {
-  let cardTemplate = document.getElementById("hikeCardTemplate");
+  let cardTemplate = document.getElementById("articleCardTemplate");
 
   db.collection(collection)
     .get()
