@@ -40,3 +40,11 @@ firebase.auth().onAuthStateChanged((user) => {
     userButton.style.display = "none"
   }
 });
+
+function logOut() {
+  firebase.auth().signOut().then(function() {
+    // Sign-out successful.
+  }).catch(function(error) {
+    // An error happened.
+  });
+}

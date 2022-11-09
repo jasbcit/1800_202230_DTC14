@@ -1,142 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    <!-- Bootstrap Library CSS CDN go here -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-
-    <!-- Boostrap Library JS CDN  go here -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-        </script>
-
-    <!-- Other libraries go here -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0
-        }
-
-        body {
-            background-color: grey;
-        }
-
-        .card {
-            width: 350px;
-            background-color: #efefef;
-            border: none;
-            cursor: pointer;
-            transition: all 0.5s;
-        }
-
-        .image img {
-            transition: all 0.5s
-        }
-
-        .card:hover .image img {
-            transform: scale(1.5)
-        }
-
-        .btn {
-            height: 140px;
-            width: 140px;
-            border-radius: 50%
-        }
-
-        .name {
-            font-size: 22px;
-            font-weight: bold
-        }
-
-        .idd {
-            font-size: 14px;
-            font-weight: 600
-        }
-
-        .idd1 {
-            font-size: 12px
-        }
-
-        .number {
-            margin-bottom: 20px;
-            font-size: 22px;
-            font-weight: bold
-        }
-
-        .follow {
-
-            font-size: 12px;
-            font-weight: 500;
-            color: #444444
-        }
-
-        .btn1 {
-            margin-bottom: 20px;
-            height: 40px;
-            width: 150px;
-            border: none;
-            background-color: #000;
-            color: #aeaeae;
-            font-size: 15px
-        }
-
-        .text span {
-            font-size: 13px;
-            color: #545454;
-            font-weight: 500
-        }
-
-        .icons i {
-            margin-top: 15px;
-            font-size: 19px
-        }
-
-        hr .new1 {
-            border: 1px solid
-        }
-
-        .join {
-            font-size: 14px;
-            color: black;
-            font-weight: bold
-        }
-
-        .date {
-            background-color: #ccc
-        }
-    </style>
-
-</head>
+    <head>
+        <title>Write Now| Explore</title>
+        <meta name="comp1800 template" content="My 1800 App" />
+        <style></style>
+        <!------------------------>
+        <!-- Required meta tags -->
+        <!------------------------>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+        <!------------------------------------------>
+        <!-- Bootstrap Library CSS JS CDN go here -->
+        <!------------------------------------------>
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+          crossorigin="anonymous"
+        ></script>
+    
+        <!-------------------------------------------------------->
+        <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+        <!-------------------------------------------------------->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+        <link
+          type="text/css"
+          rel="stylesheet"
+          href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css"
+        />
+    
+        <!-------------------------------------------->
+        <!-- Other libraries and styles of your own -->
+        <!-------------------------------------------->
+        <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+        <link rel="stylesheet" href="./styles/style.css" />
+    
+        <link rel="stylesheet" href="styles/explore.css" />
+        <link rel="stylesheet" href="styles/profile.css">
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet"
+        />
+      </head>
 
 <body>
-    <div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
-        <div class="card p-4">
-            <div class=" image d-flex flex-column justify-content-center align-items-center"> <button
-                    class="btn btn-secondary"> <img src="https://i.imgur.com/wvxPV9S.png" height="100"
-                        width="100" /></button> <span class="name mt-3">Eleanor Pena</span> <span
-                    class="idd">@eleanorpena</span>
-                <div class="d-flex flex-row justify-content-center align-items-center gap-2"> <span>
-                    </span> </div>
-                <div class="d-flex flex-row justify-content-center align-items-center mt-3"> <span class="number">1069
-                        <span class="follow">Followers</span></span> </div>
-                <div class=" d-flex mt-2"> <button class="btn1 btn-dark">Edit Profile</button> </div>
-                <div class=" d-flex mt-2"> <button class="btn1 btn-dark">Article History</button> </div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <div class="nav-logo">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              fill="goldenrod"
+              class="bi bi-pencil-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"
+              />
+            </svg>
+          </div>
+          <a class="navbar-brand" href="home.html">Write Now</a>
+  
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarText"
+            aria-controls="navbarText"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="home.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="explore.html">Explore</a>
+              </li>
+            </ul>
+            <span class="navbar-text">
+              <a href="login.html" class="log-in-button">Login</a>
+              <a href="profile.html" class="user-profile-button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="25"
+                  height="25"
+                  fill="currentColor"
+                  class="bi bi-person-circle"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                  <path
+                    fill-rule="evenodd"
+                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
+                  />
+                </svg>
+              </a>
+            </span>
+          </div>
+        </div>
+      </nav>
+      <!-- End of Navigation -->
 
-                <div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center"> <span><i
-                            class="fa fa-twitter"></i></span> <span><i class="fa fa-facebook-f"></i></span> <span><i
-                            class="fa fa-instagram"></i></span> <span><i class="fa fa-linkedin"></i></span> </div>
-                <div class=" px-2 rounded mt-4 date "> <span class="join">Joined May,2021</span> </div>
-            </div>
+    <div class="main">
+        <div class="profile">
+            <div class="profile-name"><h1>Hello, <span class="profile-user-name"></span>!</h1></div>
+            <div class="date-joined">Member since <span class="profile-date-joined"></span></div>
+        </div>
+        <div class="toggle-buttons">
+            <a href="#" class="previously-analyzed-button profile-btn-style">Previously Analyzed</a>
+            <a href="#" class="liked-articles-button profile-btn-style">Liked Articles</a>
+        </div>
+        <div class="profile-content">
+            <div class="previously-analyzed-text"></div>
+            <div class="liked-articles"></div>
         </div>
     </div>
+    <script src="./scripts/firebaseAPI_DTC14.js"></script>
+      <script src="./scripts/skeleton.js"></script>
+      <script src="./scripts/explore.js"></script>
+      <script src="./scripts/profile.js"></script>
+      <script src="./scripts/main.js"></script>
 </body>
 
 </html>

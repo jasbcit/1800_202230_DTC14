@@ -1,0 +1,28 @@
+.main{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.profile{
+    text-align: center;
+}
+.date-joined{
+    font-style: italic;
+}
+.toggle-buttons{
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+}
+.profile-btn-style {
+    background-color: lightslategray;
+    padding: 10px 30px;
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+}
+.profile-btn-style:hover {
+    background-color: white;
+    color: lightslategray
+}
