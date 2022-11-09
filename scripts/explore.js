@@ -62,7 +62,7 @@ function displayCards(collection) {
         //iterate thru each doc
         var title = doc.data().name; // get value of the "name" key
         var details = doc.data().details; // get value of the "details" key
-        var articleID = doc.data().code; //get unique ID to each hike to be used for fetching right image
+        var articleID = doc.data().code; //get unique ID to each article to be used for fetching right image
         let newcard = cardTemplate.content.cloneNode(true);
         let link = doc.data().link
         //update title and text and image
