@@ -60,9 +60,10 @@ function countWords() {
 }
 
 function countSentences() {
+  stop = /[.!?]/;
   let sentenceCount = document.querySelector(".sentences");
   let userInput = document.querySelector("#user-input").value;
-  let sentences = userInput.split(". ").length - 1;
+  let sentences = userInput.split(stop).length - 1;
 
   sentenceCount.innerHTML = sentences
 }
