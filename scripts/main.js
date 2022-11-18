@@ -52,27 +52,36 @@ function countWords() {
   let userInput = document.querySelector("#user-input").value;
 
   let words = userInput.trim().split(/\s+/).length;
-
-  wordCount.innerHTML = words
+  if (userInput.length === 0) {
+    wordCount.innerHTML = 0
+  } else {
+    wordCount.innerHTML = words
+  }
 }
 
 function countSentences() {
-let sentenceCount = document.querySelector(".sentences");
-let userInput = document.querySelector("#user-input").value;
-let sentences = userInput.split(". ").length - 1;
+  let sentenceCount = document.querySelector(".sentences");
+  let userInput = document.querySelector("#user-input").value;
+  let sentences = userInput.split(". ").length - 1;
 
-sentenceCount.innerHTML = sentences
+  sentenceCount.innerHTML = sentences
 }
 
 function countParagraphs() {
-  
+  let wordCount = document.querySelector(".words");
 
-  let paragraphCount = document.querySelector(".paragraphs");
-  let userInput = document.querySelector("#user-input").value 
-  let paragraphs = userInput.replace(/\n$/gm, "").split(/\n/).length;
 
-  paragraphCount.innerHTML = paragraphs
+  if (wordCount.innerHTML > 0) {
+    let paragraphCount = document.querySelector(".paragraphs");
+    let userInput = document.querySelector("#user-input").value;
+    let paragraphs = userInput.replace(/\n$/gm, "").split(/\n/).length;
+    paragraphCount.innerHTML = paragraphs;
 
-  console.log(paragraphs)
+  } else {
+    let paragraphCount = document.querySelector(".paragraphs");
+    paragraphCount.innerHTML = 0;
+  }
 
-}
+
+
+} 
