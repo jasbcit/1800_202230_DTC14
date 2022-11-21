@@ -164,7 +164,11 @@
           ></textarea>
         </div>
         <div class="analyze-button">
-          <button type="button" class="btn btn-primary" onclick="saveText(); sendData()">
+          <button
+            type="button"
+            class="btn btn-primary"
+            onclick="saveText(); countTopKeywords(); sendData()" 
+          >
             Analyze
           </button>
         </div>
@@ -173,6 +177,10 @@
             Log Out
           </button>
         </div>
+      </div>
+      <div class="counter">
+        <div class="counter-name">Top Words Count</div>
+        <div id="top-keywords-count"></div>
       </div>
     </div>
 

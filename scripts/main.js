@@ -33,10 +33,14 @@ function logOut() {
     });
 }
 
-document.querySelector("#user-input").addEventListener("keyup", countCharacters);
+document
+  .querySelector("#user-input")
+  .addEventListener("keyup", countCharacters);
 document.querySelector("#user-input").addEventListener("keyup", countWords);
 document.querySelector("#user-input").addEventListener("keyup", countSentences);
-document.querySelector("#user-input").addEventListener("keyup", countParagraphs);
+document
+  .querySelector("#user-input")
+  .addEventListener("keyup", countParagraphs);
 
 function countCharacters() {
   let characterCount = document.querySelector(".characters");
@@ -53,9 +57,9 @@ function countWords() {
 
   let words = userInput.trim().split(/\s+/).length;
   if (userInput.length === 0) {
-    wordCount.innerHTML = 0
+    wordCount.innerHTML = 0;
   } else {
-    wordCount.innerHTML = words
+    wordCount.innerHTML = words;
   }
 }
 
@@ -65,24 +69,43 @@ function countSentences() {
   let userInput = document.querySelector("#user-input").value;
   let sentences = userInput.split(stop).length - 1;
 
-  sentenceCount.innerHTML = sentences
+  sentenceCount.innerHTML = sentences;
 }
 
 function countParagraphs() {
   let wordCount = document.querySelector(".words");
-
 
   if (wordCount.innerHTML > 0) {
     let paragraphCount = document.querySelector(".paragraphs");
     let userInput = document.querySelector("#user-input").value;
     let paragraphs = userInput.replace(/\n$/gm, "").split(/\n/).length;
     paragraphCount.innerHTML = paragraphs;
-
   } else {
     let paragraphCount = document.querySelector(".paragraphs");
     paragraphCount.innerHTML = 0;
   }
+}
 
+function countTopKeywords() {
+  let userInput = document.querySelector("#user-input").value;
+  let topWordsEl = document.querySelector("#top-keywords-count");
+  topWordsEl.innerHTML = "";
+  let wordCounts = {};
+  let words = userInput
+    .replace(/[\.,-\/#!$%\^&\*;:{}=\-_`~()]/g, "")
+    .split(/\s+/);
 
+  console.log(wordCounts);
 
-} 
+  for (var i = 0; i < words.length; i++) {
+    wordCounts["_" + words[i]] = (wordCounts["_" + words[i]] || 0) + 1;
+  }
+
+  for (key in wordCounts) {
+    let newWord = document.createElement("p");
+    newWord.innerHTML = `${key.slice(1)}: ${wordCounts[key]}\n`;
+    newWord.style.display = "block";
+    newWord.style.textAlign = "center";
+    topWordsEl.appendChild(newWord);
+  }
+}
