@@ -95,8 +95,6 @@ function countTopKeywords() {
     .replace(/[\.,-\/#!$%\^&\*;:{}=\-_`~()]/g, "")
     .split(/\s+/);
 
-  console.log(wordCounts);
-
   for (var i = 0; i < words.length; i++) {
     wordCounts["_" + words[i]] = (wordCounts["_" + words[i]] || 0) + 1;
   }
@@ -105,15 +103,29 @@ function countTopKeywords() {
     var sortedEntries = Object.entries(obj).sort(function (a, b) {
       return b[1] - a[1];
     });
+    
     var last = sortedEntries[topN - 1][1];
     var result = sortedEntries.filter(function (entry) {
       return entry[1] >= last;
     });
     return Object.fromEntries(result);
   }
-  sortedWordCount = getTopValues(wordCounts, 5);
 
-  console.log(sortedWordCount);
+  let dictPairs = Object.keys(wordCounts).length
+
+  if(dictPairs == 1 && words.length >= 1){
+    sortedWordCount = getTopValues(wordCounts, 1)
+  } else if(dictPairs == 2 && words.length >= 1 ){
+    sortedWordCount = getTopValues(wordCounts, 2)
+  } else if(dictPairs == 3 && words.length >= 1 ){
+    sortedWordCount = getTopValues(wordCounts, 3)
+  } else if(dictPairs == 4 && words.length >= 1 ){
+    sortedWordCount = getTopValues(wordCounts, 4)
+  } else if(dictPairs == 5 && words.length >= 1 ){
+    sortedWordCount = getTopValues(wordCounts, 5)
+  } else{
+    sortedWordCount = getTopValues(wordCounts, 5)
+  }
 
   for (key in sortedWordCount) {
     let newWord = document.createElement("p");
