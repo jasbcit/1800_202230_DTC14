@@ -10,6 +10,7 @@
   flex-direction: column;
   gap: 20px;
   align-items: center;
+  
 }
 .title-and-subtitle {
   display: flex;
@@ -32,6 +33,7 @@
   padding: 15px;
   width: 600px;
   justify-content: center;
+   box-shadow: rgb(0 0 0 / 10%) 0px 2px 4px 0px, rgb(0 0 0 / 5%) 0px 1px 2px 0px;
 }
 .counter-vertical-line {
   border-left: 1px solid #cdcdcd;
@@ -55,6 +57,7 @@ textarea {
   padding: 20px;
   width: 85vw;
   height: 50vh;
+   box-shadow: rgb(0 0 0 / 10%) 0px 2px 4px 0px, rgb(0 0 0 / 5%) 0px 1px 2px 0px;
 }
 
 .btn-primary,
