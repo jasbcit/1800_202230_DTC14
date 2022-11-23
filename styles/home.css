@@ -119,3 +119,29 @@ textarea{
         align-items: center;
         line-height: 16px;
       }
+
+      #sentiment-placeholder {
+        min-height: 125px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        line-height: 16px;
+      }
+
+        #rephrase-placeholder {
+        min-height: 125px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        line-height: 16px;
+      }
+      #subjectivity-placeholder {
+        min-height: 125px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        line-height: 16px;
+      }
