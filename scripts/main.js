@@ -101,9 +101,23 @@ function countTopKeywords() {
     wordCounts["_" + words[i]] = (wordCounts["_" + words[i]] || 0) + 1;
   }
 
-  for (key in wordCounts) {
+  function getTopValues(obj, topN) {
+    var sortedEntries = Object.entries(obj).sort(function (a, b) {
+      return b[1] - a[1];
+    });
+    var last = sortedEntries[topN - 1][1];
+    var result = sortedEntries.filter(function (entry) {
+      return entry[1] >= last;
+    });
+    return Object.fromEntries(result);
+  }
+  sortedWordCount = getTopValues(wordCounts, 5);
+
+  console.log(sortedWordCount);
+
+  for (key in sortedWordCount) {
     let newWord = document.createElement("p");
-    newWord.innerHTML = `${key.slice(1)}: ${wordCounts[key]}\n`;
+    newWord.innerHTML = `${key.slice(1)}: ${sortedWordCount[key]}\n`;
     newWord.style.display = "block";
     newWord.style.textAlign = "center";
     topWordsEl.appendChild(newWord);
