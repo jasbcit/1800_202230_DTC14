@@ -114,6 +114,7 @@ textarea {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   line-height: 16px;
 }
 
