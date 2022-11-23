@@ -87,8 +87,8 @@ function countParagraphs() {
 }
 
 function countTopKeywords() {
-  let userInput = document.querySelector("#user-input").value;
-  let topWordsEl = document.querySelector("#top-keywords-count");
+  let userInput = document.querySelector("#user-input").value.toLowerCase();
+  let topWordsEl = document.querySelector("#keywords-placeholder");
   topWordsEl.innerHTML = "";
   let wordCounts = {};
   let words = userInput
