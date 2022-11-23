@@ -19,6 +19,24 @@
 	top:1px;
 }
 
+.log-out-button {
+	background-color: #dc143c;
+	border-radius:28px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff !important;
+	padding:10px 30px;
+	text-decoration:none;
+	border: 1px solid #dc143c
+}
+.log-out-button:hover {
+	background-color:#dc143c;
+}
+.log-out-button:active {
+	position:relative;
+	top:1px;
+}
+
 
 /* BODY */
 body {
