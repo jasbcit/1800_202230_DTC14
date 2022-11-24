@@ -1,6 +1,7 @@
 /* NAVIGATION */
-.nav-logo {
-    margin-right: 10px
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
 }
 .log-in-button {
 	background-color:#44c767;
