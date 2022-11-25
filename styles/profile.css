@@ -37,6 +37,7 @@
   border-radius: 8px;
   background-color: white;
   width: 472px;
+  
 }
 
 .top-keywords-header {
@@ -46,4 +47,10 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+#previouslyAnalyzedPlaceholder{
+    padding: 10px;
+    margin-top: 10px;
+    text-align: center;
 }
