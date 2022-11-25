@@ -14,6 +14,7 @@ function saveText() {
         let userInput = document.querySelector("#user-input").value;
         db.collection("savedWriting").doc(user.uid).set({
           text: userInput,
+          user: user.uid
         });
       });
     } else {
