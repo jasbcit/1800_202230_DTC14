@@ -16,15 +16,22 @@
     justify-content: center;
 }
 .profile-btn-style {
-    background-color: lightslategray;
+    background-color: white;
+    color: lightslategray;
     padding: 10px 30px;
     border-radius: 20px;
-    color: white;
     text-decoration: none;
+    box-shadow: rgb(0 0 0 / 10%) 0px 2px 4px 0px, rgb(0 0 0 / 5%) 0px 1px 2px 0px;
+
 }
 .profile-btn-style:hover {
-    background-color: white;
-    color: lightslategray
+    background-color: lightslategray;
+    color: white
+}
+
+.selected-btn {
+    background-color: lightslategray !important;
+    color: white !important;
 }
 
 .analysis-container {

@@ -1,3 +1,11 @@
+var currentUser;
+firebase.auth().onAuthStateChanged(user => {
+    if (user) {
+        currentUser = db.collection("users").doc(user.uid);
+    } else {
+    }
+});
+
 function writeArticles() {
   //define a variable for the collection you want to create in Firestore to populate data
   var articlesRef = db.collection("articles");
@@ -78,11 +86,37 @@ function displayCards(collection) {
         // newcard.querySelector('.card-text').setAttribute("id", "ctext" + i);
         // newcard.querySelector('.card-image').setAttribute("id", "cimage" + i);
 
+        newcard.querySelector('i').id = 'save-' + articleID;
+        newcard.querySelector("i").onclick = () => saveBookmark(articleID);
+        currentUser.get().then(userDoc => {
+          //get the user name
+          var bookmarks = userDoc.data().bookmarks;
+          if (bookmarks.includes(articleID)) {
+            let iconID = 'save-' + articleID
+            document.getElementById(iconID).classList.add("fa-heart")
+            document.getElementById(iconID).classList.remove("fa-heart-o")
+          }
+})
         //attach to gallery
         document.getElementById(collection + "-go-here").appendChild(newcard);
+        
         //i++;   //if you want to use commented out section
       });
     });
 }
 
 displayCards("articles");
+
+function saveBookmark(articleID) {
+  currentUser.set({
+          bookmarks: firebase.firestore.FieldValue.arrayUnion(articleID)
+      }, {
+          merge: true
+      })
+      .then(function () {
+          console.log("bookmark has been saved for: " + currentUser);
+          let iconID = 'save-' + articleID
+          document.getElementById(iconID).classList.remove("fa-heart-o")
+          document.getElementById(iconID).classList.add("fa-heart")
+      });
+}

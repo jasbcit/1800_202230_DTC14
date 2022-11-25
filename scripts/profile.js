@@ -1,12 +1,48 @@
+var currentUser;
+firebase.auth().onAuthStateChanged(user => {
+    if (user) {
+        currentUser = db.collection("users").doc(user.uid);
+        currentUserWriting = db.collection("savedWriting").doc(user.uid)
+        insertName()
+    } else {
+        // No user is signed in.
+        console.log("No user is signed in");
+        window.location.href = "login.html";
+    }
+});
+
+// function insertName() {
+//   firebase.auth().onAuthStateChanged((user) => {
+//     // Check if a user is signed in:
+//     let userNameDiv = document.querySelector(".profile-user-name");
+//     let dateJoinedDiv = document.querySelector(".profile-date-joined")
+    
+//     if (user) {
+//         currentUser = db.collection("users").doc(user.uid)
+//         currentUserWriting = db.collection("savedWriting").doc(user.uid)
+//     currentUser.get()
+//         .then(userDoc =>{
+//             let userName = userDoc.data().name
+//             let dateJoined = userDoc.data().datejoined
+//             userNameDiv.innerText = userName
+//             dateJoinedDiv.innerText = dateJoined
+//         })
+//     currentUserWriting.get()
+//         .then(userDoc =>{
+//           console.log(userDoc.data())
+//           let recentlyAnalyzedText = userDoc.data().text
+//           document.getElementById("previouslyAnalyzedPlaceholder").innerText = recentlyAnalyzedText
+//         })
+//     } else {
+//       // No user is signed in.
+//     }
+//   });
+// }
+// insertName(); //run the function
+
 function insertName() {
-  firebase.auth().onAuthStateChanged((user) => {
-    // Check if a user is signed in:
     let userNameDiv = document.querySelector(".profile-user-name");
     let dateJoinedDiv = document.querySelector(".profile-date-joined")
-    
-    if (user) {
-        currentUser = db.collection("users").doc(user.uid)
-        currentUserWriting = db.collection("savedWriting").doc(user.uid)
     currentUser.get()
         .then(userDoc =>{
             let userName = userDoc.data().name
@@ -16,13 +52,35 @@ function insertName() {
         })
     currentUserWriting.get()
         .then(userDoc =>{
-          console.log(userDoc.data())
           let recentlyAnalyzedText = userDoc.data().text
           document.getElementById("previouslyAnalyzedPlaceholder").innerText = recentlyAnalyzedText
         })
-    } else {
-      // No user is signed in.
-    }
-  });
 }
-insertName(); //run the function
+
+function analyzedLikedShowcase(){
+  let analyzedButton = document.querySelector(".previously-analyzed-button");
+  let likedButton = document.querySelector(".liked-articles-button")
+  let analysisContainer = document.querySelector(".analysis-container");
+  // let likedContainer = document.querySelector(".liked-container")
+  window.addEventListener("load", () =>{
+    analyzedButton.classList.add("selected-btn")
+    analysisContainer.style.display = 'block'
+  })
+
+  likedButton.addEventListener("click", ()=>{
+    analyzedButton.classList.remove("selected-btn")
+    likedButton.classList.add("selected-btn")
+    analysisContainer.style.display = "none"
+    // likedContainer.style.display = "block"
+  })
+
+  analyzedButton.addEventListener("click", ()=>{
+    likedButton.classList.remove("selected-btn")
+    analyzedButton.classList.add("selected-btn")
+    analysisContainer.style.display = "block"
+    // likedContainer.style.display = "none"
+  })
+
+}
+
+analyzedLikedShowcase()
