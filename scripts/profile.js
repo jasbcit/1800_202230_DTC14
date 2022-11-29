@@ -1,9 +1,11 @@
 var currentUser;
 firebase.auth().onAuthStateChanged(user => {
+  // check if a user is signed in 
   if (user) {
+    // if the user is signed in retrieve the users most recently saved writing from Firestore.
     currentUser = db.collection("users").doc(user.uid);
     currentUserWriting = db.collection("savedWriting").doc(user.uid)
-    insertName()
+    insertName() // adds the users name and date joined to the profile page
     getBookmarks(user)
   } else {
     // No user is signed in.
