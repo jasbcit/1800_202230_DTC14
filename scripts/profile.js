@@ -9,8 +9,6 @@ firebase.auth().onAuthStateChanged(user => {
     getBookmarks(user)
   } else {
     // No user is signed in.
-    console.log("No user is signed in");
-    window.location.href = "login.html";
   }
 });
 
