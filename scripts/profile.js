@@ -66,16 +66,17 @@ function getBookmarks(user) {
 
       let cardTemplate = document.getElementById("articleCardTemplate");
       bookmarks.forEach(thisArticleID => {
-        db.collection("bookmarks").where("code", "==", thisArticleID).get().then(snap => {
+        db.collection("articles").where("code", "==", thisArticleID).get().then(snap => {
           size = snap.size;
           queryData = snap.docs;
+          console.log(size)
 
-          if (size == 0) {
+          if (size == 1) {
             var doc = queryData[0].data();
-            var title = doc.data().name; // get value of the "name" key
-            var details = doc.data().details; // get value of the "details" key
-            var articleID = doc.data().code; //get unique ID to each article to be used for fetching right image
-            let link = doc.data().link
+            var title = doc.name; // get value of the "name" key
+            var details = doc.details; // get value of the "details" key
+            var articleID = doc.code; //get unique ID to each article to be used for fetching right image
+            let link = doc.link
             let newcard = cardTemplate.content.cloneNode(true);
             newcard.querySelector(".card-title").innerHTML = title;
             newcard.querySelector(".card-text").innerHTML = details;
@@ -83,7 +84,8 @@ function getBookmarks(user) {
               ".card-image"
             ).src = `./images/explore-images/${articleID}.jpg`; //Example: NV01.jpg
             newcard.querySelector(".read-more-link").innerHTML = link
-            hikeCardGroup.appendChild(newCard);
+            document.getElementById("articles-go-here").appendChild(newcard);
+            document.querySelector(".analysistext").style.display = "none"
           } else {
             console.log("Query has more than one data")
           }
