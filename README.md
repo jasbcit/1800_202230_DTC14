@@ -48,6 +48,7 @@ It has the following subfolders and files:
         /A4.jpg              # Article 4 image
         /A5.jpg              # Article 5 image
         /A6.jpg              # Article 6 image
+        
 ├── scripts                  # Folder for scripts
     /authentication.js       # Authentication script to verify users 
     /cloudmersive.js         # API Script to re-word and detect sentiment from text
