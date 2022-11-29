@@ -61,3 +61,15 @@
     margin-top: 10px;
     text-align: center;
 }
+
+@media (min-width: 350px) {
+    .analysis-container{
+      width: 85vw
+    }
+  }
+  
+  @media (min-width: 810px) {
+    .analysis-container{
+      width: 472px
+    }
+  }
