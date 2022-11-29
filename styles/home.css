@@ -17,6 +17,7 @@
   flex-direction: column;
   align-items: center;
   color: #3f3f3f;
+  text-align: center;
 }
 
 .title-and-subtitle .name {
@@ -119,7 +120,7 @@ textarea {
   justify-content: center;
   align-items: center;
   text-align: center;
-  line-height: 16px;
+  line-height: 25px;
 }
 
 #sentiment-placeholder, #rephrase-placeholder {
@@ -133,3 +134,35 @@ textarea {
 }
 
 
+@media (min-width: 350px) {
+  .counter-vertical-line {
+    display: none
+  }
+  .quick-analysis-counters {
+    flex-direction: column;
+    gap: 0px;
+    width: 70vw;
+  }
+  .analysis-container{
+    width: 85vw
+  }
+}
+
+@media (min-width: 500px) {
+  .quick-analysis-counters {
+    width: 50vw;
+  }
+}
+
+@media (min-width: 810px) {
+  .counter-vertical-line {
+    display: block
+  }
+  .quick-analysis-counters {
+    flex-direction: row;
+    width: 600px;
+  }
+  .analysis-container{
+    width: 472px
+  }
+}
