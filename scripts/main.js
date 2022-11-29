@@ -28,7 +28,7 @@ function logOut() {
     .signOut()
     .then(function () {
       // Sign-out successful.
-      window.location.assign("home.html");
+      window.location.assign("index.html");
     })
     .catch(function (error) {
       // An error happened.
