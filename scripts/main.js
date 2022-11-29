@@ -7,7 +7,7 @@ firebase.auth().onAuthStateChanged((user) => {
     console.log(user.uid);
     console.log(user.displayName);
 
-    loginButton.style.display = "none";
+    loginButton.style.display = "none"; // hides the login button if a user is logged in
     userButton.style.display = "inline";
 
     //method #1:  insert with html only
@@ -16,12 +16,13 @@ firebase.auth().onAuthStateChanged((user) => {
     // $("#name-goes-here").text(user_Name); //using jquery
   } else {
     // No user is signed in.
-    loginButton.style.display = "inline";
+    loginButton.style.display = "inline"; // displays the login button if a user is not logged in 
     userButton.style.display = "none";
   }
 });
 
 function logOut() {
+  // logs the user out of the app
   firebase
     .auth()
     .signOut()
@@ -34,16 +35,15 @@ function logOut() {
     });
 }
 
-document
-  .querySelector("#user-input")
-  .addEventListener("keyup", countCharacters);
+// The code below makes the character, word, sentence and paragraph count happen live each time the user presses a key.
+
+document.querySelector("#user-input").addEventListener("keyup", countCharacters);
 document.querySelector("#user-input").addEventListener("keyup", countWords);
 document.querySelector("#user-input").addEventListener("keyup", countSentences);
-document
-  .querySelector("#user-input")
-  .addEventListener("keyup", countParagraphs);
+document.querySelector("#user-input").addEventListener("keyup", countParagraphs);
 
 function countCharacters() {
+  // Counts the number of characters the user has typed and displays it under character count
   let characterCount = document.querySelector(".characters");
   let userInput = document.querySelector("#user-input").value;
 
@@ -53,6 +53,7 @@ function countCharacters() {
 }
 
 function countWords() {
+  // Counts the number of words the user has typed and displays it under word count
   let wordCount = document.querySelector(".words");
   let userInput = document.querySelector("#user-input").value;
 
@@ -65,6 +66,7 @@ function countWords() {
 }
 
 function countSentences() {
+  // Counts the number of sentences the user has typed and displays it under sentence count
   stop = /[.!?]/;
   let sentenceCount = document.querySelector(".sentences");
   let userInput = document.querySelector("#user-input").value;
@@ -74,6 +76,7 @@ function countSentences() {
 }
 
 function countParagraphs() {
+  // Counts the number of paragraphs the user has typed and displays it under paragraph count
   let wordCount = document.querySelector(".words");
 
   if (wordCount.innerHTML > 0) {
@@ -88,6 +91,7 @@ function countParagraphs() {
 }
 
 function countTopKeywords() {
+  // Counts the most used words and displays them in the top key words count container
   let userInput = document.querySelector("#user-input").value.toLowerCase();
   let topWordsEl = document.querySelector("#keywords-placeholder");
   topWordsEl.innerHTML = "";
@@ -104,7 +108,7 @@ function countTopKeywords() {
     var sortedEntries = Object.entries(obj).sort(function (a, b) {
       return b[1] - a[1];
     });
-    
+
     var last = sortedEntries[topN - 1][1];
     var result = sortedEntries.filter(function (entry) {
       return entry[1] >= last;
@@ -112,20 +116,20 @@ function countTopKeywords() {
     return Object.fromEntries(result);
   }
 
-  let dictPairs = Object.keys(wordCounts).length
+  let dictPairs = Object.keys(wordCounts).length;
 
-  if(dictPairs == 1 && words.length >= 1){
-    sortedWordCount = getTopValues(wordCounts, 1)
-  } else if(dictPairs == 2 && words.length >= 1 ){
-    sortedWordCount = getTopValues(wordCounts, 2)
-  } else if(dictPairs == 3 && words.length >= 1 ){
-    sortedWordCount = getTopValues(wordCounts, 3)
-  } else if(dictPairs == 4 && words.length >= 1 ){
-    sortedWordCount = getTopValues(wordCounts, 4)
-  } else if(dictPairs == 5 && words.length >= 1 ){
-    sortedWordCount = getTopValues(wordCounts, 5)
-  } else{
-    sortedWordCount = getTopValues(wordCounts, 5)
+  if (dictPairs == 1 && words.length >= 1) {
+    sortedWordCount = getTopValues(wordCounts, 1);
+  } else if (dictPairs == 2 && words.length >= 1) {
+    sortedWordCount = getTopValues(wordCounts, 2);
+  } else if (dictPairs == 3 && words.length >= 1) {
+    sortedWordCount = getTopValues(wordCounts, 3);
+  } else if (dictPairs == 4 && words.length >= 1) {
+    sortedWordCount = getTopValues(wordCounts, 4);
+  } else if (dictPairs == 5 && words.length >= 1) {
+    sortedWordCount = getTopValues(wordCounts, 5);
+  } else {
+    sortedWordCount = getTopValues(wordCounts, 5);
   }
 
   for (key in sortedWordCount) {
