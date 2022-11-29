@@ -18,23 +18,23 @@ function writeArticles() {
     code: "A1",
     name: "Make Time to Write: Overcome Your Excuses",
     details:
-      "By Cynthia ... a full day of work, family and life, you fall into bed ... Mentally ticking...",
-
+      "After a full day of work,Guest Posting family and life, you fall into bed exhausted.",
+      link: '<a href="https://www.articlesfactory.com/articles/writing/make-time-to-write-overcome-your-excuses.html" class="btn btn-outline-success btn-sm">Read More</a>',
     last_updated: firebase.firestore.FieldValue.serverTimestamp(),
   });
   articlesRef.add({
     code: "A2",
     name: "Three Proven Ways to Handle Your Writing Anxiety",
     details: "Discover how to get rid of the writing anxiety once and for all!",
-
+    link: '<a href="https://www.articlesfactory.com/articles/writing/three-proven-ways-to-handle-your-writing-anxiety.html" class="btn btn-outline-success btn-sm">Read More</a>',
     last_updated: firebase.firestore.FieldValue.serverTimestamp(),
   });
   articlesRef.add({
     code: "A3",
     name: "The Myth of the Writing Fairy",
     details:
-      "Here’s a fun question to ponder. What do The Stand, The Hobbit and A ... Carol all have in common?",
-
+      "Here’s a fun question to ponder. What do The Stand, The Hobbit and A Christmas Carol all have in common?",
+      link: '<a href="https://www.articlesfactory.com/articles/writing/the-myth-of-the-writing-fairy.html" class="btn btn-outline-success btn-sm">Read More</a>',
     last_updated: firebase.firestore.FieldValue.serverTimestamp(),
   });
   articlesRef.add({
@@ -42,7 +42,7 @@ function writeArticles() {
     name: "The Benefits of Journal Writing",
     details:
       "Everyday we experience many different events. Some good, some bad, some memorable and some that can be forgotten the next day.",
-
+      link: '<a href="https://www.articlesfactory.com/articles/writing/the-benefits-of-journal-writing.html" class="btn btn-outline-success btn-sm">Read More</a>',
     last_updated: firebase.firestore.FieldValue.serverTimestamp(),
   });
   articlesRef.add({
@@ -50,15 +50,15 @@ function writeArticles() {
     name: "Basic Steps To Plan Academic Dissertation Writing",
     details:
       "Let us talk a bit about what SEO is before we get into the SEO article writing guidelines for those that may be new or do not quite understand it.",
-
+      link: '<a href="https://www.articlesfactory.com/articles/education/basic-steps-to-plan-an-academic-dissertation-writing.html" class="btn btn-outline-success btn-sm">Read More</a>',
     last_updated: firebase.firestore.FieldValue.serverTimestamp(),
   });
   articlesRef.add({
     code: "A6",
     name: "Writer’s Web Resources",
     details:
-      "The Internet has truly ... the careers of writers ... Now you can work for ... ... and a whole range of other clients on a truly global scale. Whether you are in the",
-
+      "The Internet has truly revolutionized the careers of writers worldwide. Now you can work for publishers,Guest Posting corporations and a whole range of other clients on a truly global scale.",
+    link: '<a href="https://www.articlesfactory.com/articles/writing/writers-web-resources.html" class="btn btn-outline-success btn-sm">Read More</a>',
     last_updated: firebase.firestore.FieldValue.serverTimestamp(),
   });
 }

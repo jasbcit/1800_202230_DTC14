@@ -29,10 +29,18 @@ img {
   height: 200px;
   width: 100%;
   object-fit: cover;
-  border-radius: 20px 20px 0px 0px;
+  border-radius: 12px 12px 0px 0px !important;
 }
 
 #articles-go-here {
   justify-content: center;
   gap: 10px;
+}
+
+.card-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
 }
