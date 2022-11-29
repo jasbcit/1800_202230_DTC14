@@ -30,7 +30,7 @@ Content of the project folder:
 ```
  Top level of project folder: 
 ├── gitignore               # Git ignore file
-├── home.html               # Landing HTML file
+├── index.html              # Landing HTML file
 this is what users see when you come to url
 ├── profile.html            # Profile page 
 ├── login.html              # Login page
@@ -52,13 +52,13 @@ It has the following subfolders and files:
     /authentication.js       # Authentication script to verify users 
     /cloudmersive.js         # API Script to re-word and detect sentiment from text
     /explore.js              # Explore script to display writing articles 
-    /home.js                 # Homepage script to save the users input to firebase
+    /index.js                # Index script to save the users input to firebase
     /main.js                 # Bulk of scripts here including logout functionality, character, word, sentence and paragraph count
     /profile.js              # Profile script to display users name, date joined, liked articles and previously analyzed text
 
 ├── styles                   # Folder for styles
     /explore.css             # Contains all the css for the explore page
-    /home.css                # Contains all the css for the home page
+    /index.css                # Contains all the css for the index page
     /login.css               # Contains all the css login
     /profile.css             # Contains all the css for the profile page
     /style.css               # Contains the general css that is applied to every single page
