@@ -57,12 +57,15 @@ textarea {
   padding: 20px;
   width: 85vw;
   height: 50vh;
-   box-shadow: rgb(0 0 0 / 10%) 0px 2px 4px 0px, rgb(0 0 0 / 5%) 0px 1px 2px 0px;
+  outline: none;
+  box-shadow: rgb(0 0 0 / 10%) 0px 2px 4px 0px, rgb(0 0 0 / 5%) 0px 1px 2px 0px;
 }
+
 
 .btn-primary,
 .btn-primary:hover,
 .btn-primary:active,
+.btn-primary:focus,
 .btn-primary:visited {
   background-color: white !important;
   border: white;
@@ -119,21 +122,14 @@ textarea {
   line-height: 16px;
 }
 
-#sentiment-placeholder {
+#sentiment-placeholder, #rephrase-placeholder {
   min-height: 125px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  line-height: 16px;
+  text-align: center;
+  line-height: 25px;
 }
 
-#rephrase-placeholder {
-  min-height: 125px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  line-height: 16px;
-}
 

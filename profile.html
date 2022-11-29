@@ -138,10 +138,35 @@
           </div>
         </div>
       </div>
+      <div class="liked-container">
+        <!-- Here is container for cards  -->
+        <div class="container">
+          <div id="articles-go-here" class="row row-cols-auto">You haven't liked any articles yet!</div>
+        </div>
+      </div>
+
+      <!-- Templates for general use, not displayed -->
+      <template id="articleCardTemplate">
+        <div class="card py-2 mx-2" style="width: 18rem">
+          <img class="card-image card-img-top" src=" ..." alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text"></p>
+
+            <div class="card-buttons">
+              <div class="read-more-link"></div>
+
+              <a href="#" class="btn btn-outline-danger btn-sm"
+                ><i class="fa fa-heart-o"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </template>
     </div>
     <script src="./scripts/firebaseAPI_DTC14.js"></script>
       <script src="./scripts/skeleton.js"></script>
-      <script src="./scripts/explore.js"></script>
+      <!-- <script src="./scripts/explore.js"></script> -->
       <script src="./scripts/profile.js"></script>
       <script src="./scripts/main.js"></script>
 </body>

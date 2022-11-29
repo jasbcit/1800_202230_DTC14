@@ -39,6 +39,7 @@ var dataRequest;
 function sendDataRephrase() {
     dataFromBox = document.querySelector("#user-input").value;
     dataRephrase = "TextToTranslate=" + dataFromBox + "&TargetRephrasingCount=1";
+    document.getElementById("rephrase-placeholder").innerText = "Loading..."
     let rephrase = ""
     var url = "https://api.cloudmersive.com/nlp-v2/rephrase/rephrase/eng/by-sentence";
     let request = new XMLHttpRequest();
@@ -48,7 +49,20 @@ function sendDataRephrase() {
             for (var i = 0; i < document.querySelector(".sentences").innerHTML; i++ ) {
                 rephrase += (JSON.parse(this.response)["RephrasedResults"][i]["Rephrasings"][0]["RephrasedSentenceText"]) + " "
             }
-            document.getElementById("rephrase-placeholder").innerText = rephrase
+            console.log(rephrase)
+            if(rephrase.includes("J&apos")){
+                result = rephrase.replace("J&apos", "I")
+            }
+            else if(rephrase.includes("J'")){
+                result = rephrase.replace("J'", 'I')
+            }
+            else if(rephrase.includes("j'")){
+                result = rephrase.replace("j'", "I")
+            }
+             else{
+                result = rephrase
+            }
+            document.getElementById("rephrase-placeholder").innerText = result
         }
     });
     request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
