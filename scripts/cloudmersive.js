@@ -37,6 +37,7 @@ var dataRequest;
 // }
 
 function sendDataRephrase() {
+    // Calls the API and retrieves the rephrased user input and displays it in the re-worded container.
     dataFromBox = document.querySelector("#user-input").value;
     dataRephrase = "TextToTranslate=" + dataFromBox + "&TargetRephrasingCount=1";
     document.getElementById("rephrase-placeholder").innerText = "Loading..."
@@ -71,21 +72,22 @@ function sendDataRephrase() {
 }
 
 function sendDataSentiment() {
-    dataFromBox = document.querySelector("#user-input").value;
-    dataSentiment = "TextToAnalyze=" + dataFromBox;
-    let sentiment = ""
-    var url = "https://api.cloudmersive.com/nlp-v2/analytics/sentiment";
-    let request = new XMLHttpRequest();
-    request.open("POST", url);
-    request.addEventListener("readystatechange", function () {
-        if (this.readyState === 4) {
-            sentiment = (JSON.parse(this.response)["SentimentClassificationResult"])
-            document.getElementById("sentiment-placeholder").innerText = sentiment
-        }
-    });
-    request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    request.setRequestHeader("Apikey", "5adaed35-ecc0-438c-b207-760a2f54eecd");
-    request.send(dataSentiment);
+  // Calls the API and retrieves the sentiment for user input and displays it in the sentiment container.
+  dataFromBox = document.querySelector("#user-input").value;
+  dataSentiment = "TextToAnalyze=" + dataFromBox;
+  let sentiment = "";
+  var url = "https://api.cloudmersive.com/nlp-v2/analytics/sentiment";
+  let request = new XMLHttpRequest();
+  request.open("POST", url);
+  request.addEventListener("readystatechange", function () {
+    if (this.readyState === 4) {
+      sentiment = JSON.parse(this.response)["SentimentClassificationResult"];
+      document.getElementById("sentiment-placeholder").innerText = sentiment;
+    }
+  });
+  request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  request.setRequestHeader("Apikey", "5adaed35-ecc0-438c-b207-760a2f54eecd");
+  request.send(dataSentiment);
 }
 
 

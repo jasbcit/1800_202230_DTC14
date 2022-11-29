@@ -1,6 +1,8 @@
 var currentUser;
 firebase.auth().onAuthStateChanged(user => {
+  // checks if user is logged in 
     if (user) {
+      // if a user is logged in retrieves the user id from Firestore.
         currentUser = db.collection("users").doc(user.uid);
     } else {
     }
@@ -9,6 +11,8 @@ firebase.auth().onAuthStateChanged(user => {
 function writeArticles() {
   //define a variable for the collection you want to create in Firestore to populate data
   var articlesRef = db.collection("articles");
+
+  // This function adds all the necessary article information to the fire store.
 
   articlesRef.add({
     code: "A1",
@@ -60,6 +64,7 @@ function writeArticles() {
 }
 
 function displayCards(collection) {
+  // This function retrieves the article information previously added to Firestore to display it on the explore page.
   let cardTemplate = document.getElementById("articleCardTemplate");
 
   db.collection(collection)
@@ -108,6 +113,7 @@ function displayCards(collection) {
 displayCards("articles");
 
 function saveBookmark(articleID) {
+  // Checks if the user has saved an article
   currentUser.set({
           bookmarks: firebase.firestore.FieldValue.arrayUnion(articleID)
       }, {
