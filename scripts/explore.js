@@ -93,15 +93,17 @@ function displayCards(collection) {
 
         newcard.querySelector('i').id = 'save-' + articleID;
         newcard.querySelector("i").onclick = () => saveBookmark(articleID);
-        currentUser.get().then(userDoc => {
-          //get the user name
-          var bookmarks = userDoc.data().bookmarks;
-          if (bookmarks.includes(articleID)) {
-            let iconID = 'save-' + articleID
-            document.getElementById(iconID).classList.add("fa-heart")
-            document.getElementById(iconID).classList.remove("fa-heart-o")
-          }
-})
+        if(typeof(currentUser) != "undefined"){
+          currentUser.get().then(userDoc => {
+            var bookmarks = userDoc.data().bookmarks;
+            if (bookmarks.includes(articleID)) {
+              let iconID = 'save-' + articleID
+              document.getElementById(iconID).classList.add("fa-heart")
+              document.getElementById(iconID).classList.remove("fa-heart-o")
+            }
+  })
+        }
+
         //attach to gallery
         document.getElementById(collection + "-go-here").appendChild(newcard);
         
