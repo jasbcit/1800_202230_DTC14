@@ -67,7 +67,7 @@ function sendDataRephrase() {
         }
     });
     request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    request.setRequestHeader("Apikey", "5adaed35-ecc0-438c-b207-760a2f54eecd");
+    request.setRequestHeader("Apikey", "a07307b2-2913-49d3-8f73-dac67d7fb028");
     request.send(dataRephrase);
 }
 
@@ -86,7 +86,7 @@ function sendDataSentiment() {
     }
   });
   request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-  request.setRequestHeader("Apikey", "5adaed35-ecc0-438c-b207-760a2f54eecd");
+  request.setRequestHeader("Apikey", "a07307b2-2913-49d3-8f73-dac67d7fb028");
   request.send(dataSentiment);
 }
 
