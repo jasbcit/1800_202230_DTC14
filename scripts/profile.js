@@ -15,6 +15,7 @@ firebase.auth().onAuthStateChanged(user => {
 
 
 function insertName() {
+  // Displays the users profile name and date joined at the top of their profile page.
   let userNameDiv = document.querySelector(".profile-user-name");
   let dateJoinedDiv = document.querySelector(".profile-date-joined")
   currentUser.get()
@@ -32,6 +33,7 @@ function insertName() {
 }
 
 function getBookmarks(user) {
+  // Gets the users liked/bookmarked articles from the Firestore using .get().
   db.collection("users").doc(user.uid).get()
     .then(userDoc => {
       var bookmarks = userDoc.data().bookmarks;
@@ -70,6 +72,7 @@ function getBookmarks(user) {
 }
 
 function analyzedLikedShowcase() {
+  // Displays the previously analyzed text and liked articles in the user profile.
   let analyzedButton = document.querySelector(".previously-analyzed-button");
   let likedButton = document.querySelector(".liked-articles-button")
   let analysisContainer = document.querySelector(".analysis-container");
