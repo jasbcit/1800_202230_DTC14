@@ -30,8 +30,7 @@ Content of the project folder:
 ```
  Top level of project folder: 
 ├── gitignore               # Git ignore file
-├── index.html              # Landing HTML file
-this is what users see when you come to url
+├── index.html              # Landing HTML file this is what users see when you come to url
 ├── profile.html            # Profile page 
 ├── login.html              # Login page
 ├── explore.html            # Explore page
