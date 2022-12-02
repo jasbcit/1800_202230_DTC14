@@ -59,13 +59,19 @@ It has the following subfolders and files:
 
 ├── styles                   # Folder for styles
     /explore.css             # Contains all the css for the explore page
-    /index.css                # Contains all the css for the index page
+    /index.css               # Contains all the css for the index page
     /login.css               # Contains all the css login
     /profile.css             # Contains all the css for the profile page
     /style.css               # Contains the general css that is applied to every single page
 
-Firebase hosting files: 
-├── .firebaserc...
+Firebase hosting files:      # Files for deploying website
+├── .firebaserc              
+├── .firebase.json
+├── .firestore.indexes.json
+├── .firestore.rules
+├── .storage.rules
+
+
 
 
 ```
