@@ -70,6 +70,8 @@ Firebase hosting files:      # Files for deploying website
 ├── .firestore.indexes.json
 ├── .firestore.rules
 ├── .storage.rules
+├── .404.html                # Default 404 error page not found page
+
 
 
 
