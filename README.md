@@ -1,4 +1,4 @@
-## My Web Application (Add your Title here)
+## Write Now
 
 * [General info](#general-info)
 * [Technologies](#technologies)
@@ -9,7 +9,7 @@
 Write Now is a browser based web application to help individuals improve and bring balance to their writing with AI assisted sentence variation, tone and word count.
 
 
-* Hello my name is Jas. I'm excited about this project because it is exciting
+* Hello my name is Jas. I'm excited about this project because it uses NLP and Machine Learning!
 * Hello my name is Cadan. I can't wait to start this project because out team is so great!
 * Hello my name is Ian. I am excited to work on a project with friends!
  
