@@ -8,6 +8,8 @@
 
 Write Now is a browser based web application to help individuals improve and bring balance to their writing with AI assisted sentence variation, tone and word count.
 
+Please note: the rephrase options requires at least one complete sentence with punctuation to work properly.
+
 
 * Hello my name is Jas. I'm excited about this project because it uses NLP and Machine Learning!
 * Hello my name is Cadan. I can't wait to start this project because out team is so great!
@@ -75,9 +77,3 @@ Firebase hosting files:      # Files for deploying website
 
 
 
-```
-
-Tips for file naming files and folders:
-
-* use lowercase with no spaces
-* use dashes (not underscore) for word separation
