@@ -1,11 +1,11 @@
 var currentUser;
 firebase.auth().onAuthStateChanged(user => {
   // checks if user is logged in 
-    if (user) {
-      // if a user is logged in retrieves the user id from Firestore.
-        currentUser = db.collection("users").doc(user.uid);
-    } else {
-    }
+  if (user) {
+    // if a user is logged in retrieves the user id from Firestore.
+    currentUser = db.collection("users").doc(user.uid);
+  } else {
+  }
 });
 
 function writeArticles() {
@@ -13,13 +13,12 @@ function writeArticles() {
   var articlesRef = db.collection("articles");
 
   // This function adds all the necessary article information to the fire store.
-
   articlesRef.add({
     code: "A1",
     name: "Make Time to Write: Overcome Your Excuses",
     details:
       "After a full day of work,Guest Posting family and life, you fall into bed exhausted.",
-      link: '<a href="https://www.articlesfactory.com/articles/writing/make-time-to-write-overcome-your-excuses.html" class="btn btn-outline-success btn-sm">Read More</a>',
+    link: '<a href="https://www.articlesfactory.com/articles/writing/make-time-to-write-overcome-your-excuses.html" class="btn btn-outline-success btn-sm">Read More</a>',
     last_updated: firebase.firestore.FieldValue.serverTimestamp(),
   });
   articlesRef.add({
@@ -34,7 +33,7 @@ function writeArticles() {
     name: "The Myth of the Writing Fairy",
     details:
       "Here’s a fun question to ponder. What do The Stand, The Hobbit and A Christmas Carol all have in common?",
-      link: '<a href="https://www.articlesfactory.com/articles/writing/the-myth-of-the-writing-fairy.html" class="btn btn-outline-success btn-sm">Read More</a>',
+    link: '<a href="https://www.articlesfactory.com/articles/writing/the-myth-of-the-writing-fairy.html" class="btn btn-outline-success btn-sm">Read More</a>',
     last_updated: firebase.firestore.FieldValue.serverTimestamp(),
   });
   articlesRef.add({
@@ -42,7 +41,7 @@ function writeArticles() {
     name: "The Benefits of Journal Writing",
     details:
       "Everyday we experience many different events. Some good, some bad, some memorable and some that can be forgotten the next day.",
-      link: '<a href="https://www.articlesfactory.com/articles/writing/the-benefits-of-journal-writing.html" class="btn btn-outline-success btn-sm">Read More</a>',
+    link: '<a href="https://www.articlesfactory.com/articles/writing/the-benefits-of-journal-writing.html" class="btn btn-outline-success btn-sm">Read More</a>',
     last_updated: firebase.firestore.FieldValue.serverTimestamp(),
   });
   articlesRef.add({
@@ -50,7 +49,7 @@ function writeArticles() {
     name: "Basic Steps To Plan Academic Dissertation Writing",
     details:
       "Let us talk a bit about what SEO is before we get into the SEO article writing guidelines for those that may be new or do not quite understand it.",
-      link: '<a href="https://www.articlesfactory.com/articles/education/basic-steps-to-plan-an-academic-dissertation-writing.html" class="btn btn-outline-success btn-sm">Read More</a>',
+    link: '<a href="https://www.articlesfactory.com/articles/education/basic-steps-to-plan-an-academic-dissertation-writing.html" class="btn btn-outline-success btn-sm">Read More</a>',
     last_updated: firebase.firestore.FieldValue.serverTimestamp(),
   });
   articlesRef.add({
@@ -66,7 +65,6 @@ function writeArticles() {
 function displayCards(collection) {
   // This function retrieves the article information previously added to Firestore to display it on the explore page.
   let cardTemplate = document.getElementById("articleCardTemplate");
-
   db.collection(collection)
     .get()
     .then((snap) => {
@@ -85,15 +83,9 @@ function displayCards(collection) {
           ".card-image"
         ).src = `./images/explore-images/${articleID}.jpg`; //Example: NV01.jpg
         newcard.querySelector(".read-more-link").innerHTML = link
-
-        //give unique ids to all elements for future use
-        // newcard.querySelector('.card-title').setAttribute("id", "ctitle" + i);
-        // newcard.querySelector('.card-text').setAttribute("id", "ctext" + i);
-        // newcard.querySelector('.card-image').setAttribute("id", "cimage" + i);
-
         newcard.querySelector('i').id = 'save-' + articleID;
         newcard.querySelector("i").onclick = () => saveBookmark(articleID);
-        if(typeof(currentUser) != "undefined"){
+        if (typeof (currentUser) != "undefined") {
           currentUser.get().then(userDoc => {
             var bookmarks = userDoc.data().bookmarks;
             if (bookmarks.includes(articleID)) {
@@ -101,13 +93,10 @@ function displayCards(collection) {
               document.getElementById(iconID).classList.add("fa-heart")
               document.getElementById(iconID).classList.remove("fa-heart-o")
             }
-  })
+          })
         }
-
         //attach to gallery
         document.getElementById(collection + "-go-here").appendChild(newcard);
-        
-        //i++;   //if you want to use commented out section
       });
     });
 }
@@ -117,14 +106,13 @@ displayCards("articles");
 function saveBookmark(articleID) {
   // Checks if the user has saved an article
   currentUser.set({
-          bookmarks: firebase.firestore.FieldValue.arrayUnion(articleID)
-      }, {
-          merge: true
-      })
-      .then(function () {
-          console.log("bookmark has been saved for: " + currentUser);
-          let iconID = 'save-' + articleID
-          document.getElementById(iconID).classList.remove("fa-heart-o")
-          document.getElementById(iconID).classList.add("fa-heart")
-      });
+    bookmarks: firebase.firestore.FieldValue.arrayUnion(articleID)
+  }, {
+    merge: true
+  })
+    .then(function () {
+      let iconID = 'save-' + articleID
+      document.getElementById(iconID).classList.remove("fa-heart-o")
+      document.getElementById(iconID).classList.add("fa-heart")
+    });
 }

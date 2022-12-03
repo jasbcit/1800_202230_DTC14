@@ -1,5 +1,6 @@
 // Initialize the FirebaseUI Widget using Firebase.
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
+// Initialize new Date object in order to store the sign up date below on line 30
 const date = new Date()
 
 var uiConfig = {
@@ -24,13 +25,12 @@ var uiConfig = {
             //write to firestore. We are using the UID for the ID in users collection
             name: user.displayName, //"users" collection
             email: user.email, //with authenticated user's ID (user.uid)
-            country: "Canada", //optional default profile info
-            school: "BCIT", //optional default profile info
+            country: "Canada",
+            school: "BCIT",
             datejoined: date.toLocaleDateString(),
             bookmarks: []
           })
           .then(function () {
-            console.log("New user added to firestore");
             window.location.assign("index.html"); //re-direct to index.html after signup
           })
           .catch(function (error) {
@@ -47,17 +47,10 @@ var uiConfig = {
       document.getElementById("loader").style.display = "none";
     },
   },
-  // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
   signInFlow: "popup",
   signInSuccessUrl: "index.html",
   signInOptions: [
-    // Leave the lines as is for the providers you want to offer your users.
-    // firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-    // firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-    // firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-    // firebase.auth.GithubAuthProvider.PROVIDER_ID,
     firebase.auth.EmailAuthProvider.PROVIDER_ID,
-    // firebase.auth.PhoneAuthProvider.PROVIDER_ID,
   ],
   // Terms of service url.
   tosUrl: "<your-tos-url>",

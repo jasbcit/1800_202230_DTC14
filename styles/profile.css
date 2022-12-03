@@ -1,37 +1,42 @@
-.main{
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
+.main {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
-.profile{
-    text-align: center;
+
+.profile {
+  text-align: center;
 }
-.date-joined{
-    font-style: italic;
+
+.date-joined {
+  font-style: italic;
 }
-.toggle-buttons{
-    display: flex;
-    gap: 50px;
-    justify-content: center;
+
+.toggle-buttons {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
 }
+
 .profile-btn-style {
-    background-color: white;
-    color: lightslategray;
-    padding: 10px 30px;
-    border-radius: 20px;
-    text-decoration: none;
-    box-shadow: rgb(0 0 0 / 10%) 0px 2px 4px 0px, rgb(0 0 0 / 5%) 0px 1px 2px 0px;
+  background-color: white;
+  color: lightslategray;
+  padding: 10px 30px;
+  border-radius: 20px;
+  text-decoration: none;
+  box-shadow: rgb(0 0 0 / 10%) 0px 2px 4px 0px, rgb(0 0 0 / 5%) 0px 1px 2px 0px;
 
 }
+
 .profile-btn-style:hover {
-    background-color: lightslategray;
-    color: white
+  background-color: lightslategray;
+  color: white
 }
 
 .selected-btn {
-    background-color: lightslategray !important;
-    color: white !important;
+  background-color: lightslategray !important;
+  color: white !important;
 }
 
 .analysis-container {
@@ -44,7 +49,7 @@
   border-radius: 8px;
   background-color: white;
   width: 472px;
-  
+
 }
 
 .top-keywords-header {
@@ -56,20 +61,20 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-#previouslyAnalyzedPlaceholder{
-    padding: 10px;
-    margin-top: 10px;
-    text-align: center;
+#previouslyAnalyzedPlaceholder {
+  padding: 10px;
+  margin-top: 10px;
+  text-align: center;
 }
 
 @media (min-width: 350px) {
-    .analysis-container{
-      width: 85vw
-    }
+  .analysis-container {
+    width: 85vw
   }
-  
-  @media (min-width: 810px) {
-    .analysis-container{
-      width: 472px
-    }
+}
+
+@media (min-width: 810px) {
+  .analysis-container {
+    width: 472px
   }
+}

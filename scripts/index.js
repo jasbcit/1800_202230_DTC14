@@ -1,6 +1,5 @@
-
-
 function saveText() {
+  // This function saves users writing to collected 'savedWriting'
   firebase.auth().onAuthStateChanged((user) => {
     // Check if user is signed in:
     if (user) {

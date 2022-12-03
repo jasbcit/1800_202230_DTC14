@@ -3,17 +3,8 @@ firebase.auth().onAuthStateChanged((user) => {
   let loginButton = document.querySelector(".log-in-button");
   let userButton = document.querySelector(".user-profile-button");
   if (user) {
-    // Do something for the currently logged-in user here:
-    console.log(user.uid);
-    console.log(user.displayName);
-
     loginButton.style.display = "none"; // hides the login button if a user is logged in
     userButton.style.display = "inline";
-
-    //method #1:  insert with html only
-    //document.getElementById("name-goes-here").innerText = user_Name;    //using javascript
-    //method #2:  insert using jquery
-    // $("#name-goes-here").text(user_Name); //using jquery
   } else {
     // No user is signed in.
     loginButton.style.display = "inline"; // displays the login button if a user is not logged in 

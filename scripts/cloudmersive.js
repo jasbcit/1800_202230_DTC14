@@ -47,20 +47,21 @@ function sendDataRephrase() {
     request.open("POST", url);
     request.addEventListener("readystatechange", function () {
         if (this.readyState === 4) {
-            for (var i = 0; i < document.querySelector(".sentences").innerHTML; i++ ) {
+            //This loop is used in order to get the rephrasings of all sentences the user has inputted.
+            for (var i = 0; i < document.querySelector(".sentences").innerHTML; i++) {
                 rephrase += (JSON.parse(this.response)["RephrasedResults"][i]["Rephrasings"][0]["RephrasedSentenceText"]) + " "
             }
-            console.log(rephrase)
-            if(rephrase.includes("J&apos")){
+            // The following if/else block is used to format the reponses returned from the API (it often replaces I with j'/J'/J&apos)
+            if (rephrase.includes("J&apos")) {
                 result = rephrase.replace("J&apos", "I")
             }
-            else if(rephrase.includes("J'")){
+            else if (rephrase.includes("J'")) {
                 result = rephrase.replace("J'", 'I')
             }
-            else if(rephrase.includes("j'")){
+            else if (rephrase.includes("j'")) {
                 result = rephrase.replace("j'", "I")
             }
-             else{
+            else {
                 result = rephrase
             }
             document.getElementById("rephrase-placeholder").innerText = result
@@ -72,22 +73,22 @@ function sendDataRephrase() {
 }
 
 function sendDataSentiment() {
-  // Calls the API and retrieves the sentiment for user input and displays it in the sentiment container.
-  dataFromBox = document.querySelector("#user-input").value;
-  dataSentiment = "TextToAnalyze=" + dataFromBox;
-  let sentiment = "";
-  var url = "https://api.cloudmersive.com/nlp-v2/analytics/sentiment";
-  let request = new XMLHttpRequest();
-  request.open("POST", url);
-  request.addEventListener("readystatechange", function () {
-    if (this.readyState === 4) {
-      sentiment = JSON.parse(this.response)["SentimentClassificationResult"];
-      document.getElementById("sentiment-placeholder").innerText = sentiment;
-    }
-  });
-  request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-  request.setRequestHeader("Apikey", "a07307b2-2913-49d3-8f73-dac67d7fb028");
-  request.send(dataSentiment);
+    // Calls the API and retrieves the sentiment for user input and displays it in the sentiment container.
+    dataFromBox = document.querySelector("#user-input").value;
+    dataSentiment = "TextToAnalyze=" + dataFromBox;
+    let sentiment = "";
+    var url = "https://api.cloudmersive.com/nlp-v2/analytics/sentiment";
+    let request = new XMLHttpRequest();
+    request.open("POST", url);
+    request.addEventListener("readystatechange", function () {
+        if (this.readyState === 4) {
+            sentiment = JSON.parse(this.response)["SentimentClassificationResult"];
+            document.getElementById("sentiment-placeholder").innerText = sentiment;
+        }
+    });
+    request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    request.setRequestHeader("Apikey", "a07307b2-2913-49d3-8f73-dac67d7fb028");
+    request.send(dataSentiment);
 }
 
 

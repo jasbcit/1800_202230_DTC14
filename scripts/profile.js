@@ -37,8 +37,6 @@ function getBookmarks(user) {
   db.collection("users").doc(user.uid).get()
     .then(userDoc => {
       var bookmarks = userDoc.data().bookmarks;
-      console.log(userDoc.data().bookmarks)
-
       let cardTemplate = document.getElementById("articleCardTemplate");
       bookmarks.forEach(thisArticleID => {
         db.collection("articles").where("code", "==", thisArticleID).get().then(snap => {
@@ -62,7 +60,6 @@ function getBookmarks(user) {
             document.getElementById("articles-go-here").appendChild(newcard);
             document.querySelector(".analysistext").style.display = "none"
           } else {
-            console.log("Query has more than one data")
           }
 
         })
